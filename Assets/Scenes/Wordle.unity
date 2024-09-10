@@ -402,7 +402,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -529,6 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769896385}
   - component: {fileID: 769896386}
+  - component: {fileID: 769896387}
   m_Layer: 5
   m_Name: Board
   m_TagString: Untagged
@@ -587,6 +588,33 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &769896387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769896384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fc3d6d9bbd72a4aa6a0d4e25feaf9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptyState:
+    fillColor: {r: 0.07058824, g: 0.07058824, b: 0.07450981, a: 1}
+    outlineColor: {r: 0.22745098, g: 0.22745098, b: 0.23529412, a: 1}
+  occupiedState:
+    fillColor: {r: 0.07058824, g: 0.07058824, b: 0.07450981, a: 1}
+    outlineColor: {r: 0.3372549, g: 0.34117648, b: 0.34509805, a: 1}
+  correctState:
+    fillColor: {r: 0.3254902, g: 0.5529412, b: 0.30588236, a: 1}
+    outlineColor: {r: 0.3254902, g: 0.5529412, b: 0.30588236, a: 1}
+  wrongSpotState:
+    fillColor: {r: 0.70980394, g: 0.62352943, b: 0.23137255, a: 1}
+    outlineColor: {r: 0.70980394, g: 0.62352943, b: 0.23137255, a: 1}
+  incorrectState:
+    fillColor: {r: 0.22745098, g: 0.22745098, b: 0.23529412, a: 1}
+    outlineColor: {r: 0.22745098, g: 0.22745098, b: 0.23529412, a: 1}
 --- !u!1001 &994297444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -920,6 +948,18 @@ PrefabInstance:
     - target: {fileID: 4240285687679617485, guid: 6c580734ec99e914b9fc1a62cc8321ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610153582692539535, guid: 6c580734ec99e914b9fc1a62cc8321ab, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610153582692539535, guid: 6c580734ec99e914b9fc1a62cc8321ab, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610153582692539535, guid: 6c580734ec99e914b9fc1a62cc8321ab, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5000780088225157195, guid: 6c580734ec99e914b9fc1a62cc8321ab, type: 3}
       propertyPath: m_AnchorMax.y
