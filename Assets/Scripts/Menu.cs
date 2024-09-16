@@ -1,21 +1,22 @@
+using System.Collections;
 using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
     public GameObject CanvasMenu;
     public GameObject CanvasGame;
-    public GameObject PanelInstructions;
+    public float delay = 0.3f;
 
     public void OnPlayHandler()
     {
+        StartCoroutine(SwitchCanvas());
+        //Time.timeScale = 0f;
+    }
+    private IEnumerator SwitchCanvas()
+    {
+        yield return new WaitForSeconds(delay);
         CanvasMenu.SetActive(false);
         CanvasGame.SetActive(true);
-        Time.timeScale = 0f;
     }
 
-    public void OnContinueHandler()
-    {
-        PanelInstructions.SetActive(false);
-        Time.timeScale = 1.0f;
-    }
 }

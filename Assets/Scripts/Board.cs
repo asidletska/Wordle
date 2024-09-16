@@ -29,6 +29,8 @@ public class Board : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI invalidText;
     public Button newGameButton;
+    public GameObject youWon;
+    public GameObject youLost;
 
     private void Awake()
     {
@@ -42,6 +44,8 @@ public class Board : MonoBehaviour
     public void NewGame()
     {
         ClearBoard();
+        youWon.SetActive(false);
+        youLost.SetActive(false);
         SetRandomWord();
         enabled = true;
     }
@@ -140,6 +144,7 @@ public class Board : MonoBehaviour
         }
         if (HasWon(row))
         {
+            youWon.SetActive(true);
             enabled = false;
         }
 
@@ -148,7 +153,11 @@ public class Board : MonoBehaviour
 
         if (rowIndex >= rows.Length)
         {
-            enabled = false;
+            if (!HasWon(row))
+            {
+                youLost.SetActive(true);
+                enabled = false;
+            }
         }
     }
 
@@ -162,6 +171,7 @@ public class Board : MonoBehaviour
             }
         }
         return false;
+        
     }
 
     private bool HasWon(Row row)
@@ -170,7 +180,7 @@ public class Board : MonoBehaviour
         {
             if (row.tiles[i].state != correctState)
             {
-                return false;
+                return false;                
             }
         }
         return true;
